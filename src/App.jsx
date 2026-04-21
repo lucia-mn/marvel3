@@ -2,19 +2,17 @@ import './App.css';
 import { BarraBusqueda } from './layout/BarraBusqueda';
 import { Footer } from './layout/Footer';
 import { Header } from './layout/Header';
+import { Router } from './router/Router';
 
 function App() {
 
   return (
     <>
-      <Header />
-      <BarraBusqueda />
+      <div className='layout'>
 
-      <main>
+        <Router />  
 
-      </main>
-
-      <Footer />
+      </div> 
     </>
   )
 }
