@@ -9,11 +9,11 @@
 .logo {
     height: 50px;
     width: auto;
+    cursor: pointer;
 }
 
 .favoritos {
-    color: #e62429;
-    font-size: 1.8rem;
+    height: 20px;
+    width: auto;
     cursor: pointer;
-    /* transition: transform 0.2s; */
 }

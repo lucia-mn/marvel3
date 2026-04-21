@@ -13,3 +13,7 @@ body {
 main {
   min-height: calc(100vh - 120px);
 }
+
+.contenedor {
+  padding: 2rem;
+}
