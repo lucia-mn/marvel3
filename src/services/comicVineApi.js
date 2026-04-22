@@ -1,7 +1,7 @@
 const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = "https://comicvine.gamespot.com/api";
 
-// PERSONAJES
+// personajes
 export const obtenerPersonajes = async (nombre = "") => {
   let url = `${BASE_URL}/characters/?api_key=${API_KEY}&format=json`;
 
@@ -15,7 +15,7 @@ export const obtenerPersonajes = async (nombre = "") => {
   return data.results;
 };
 
-// COMICS (volumes)
+// comics 
 export const obtenerComics = async () => {
   const url = `${BASE_URL}/volumes/?api_key=${API_KEY}&format=json`;
 
