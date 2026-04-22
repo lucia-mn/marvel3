@@ -3,9 +3,14 @@ import "../styles/BarraBusqueda.css";
 import { useState } from "react";
 import lupa from "../assets/lupa.png";
 
-export const BarraBusqueda = () => {
+export const BarraBusqueda = ({onBuscar}) => {
 
   const [texto, setTexto] = useState("");
+
+  const cambioTexto = (e) => {
+    setTexto(e.target.value);
+    onBuscar(e.target.value);
+  }
 
   return (
 
@@ -17,7 +22,8 @@ export const BarraBusqueda = () => {
           <input type='text' 
                   placeholder='buscar personajes...'
                   value={texto}
-                  onChange={(e) => setTexto(e.target.value)}
+                  // onChange={(e) => setTexto(e.target.value)}
+                  onChange={cambioTexto}
           />
         </div>
 

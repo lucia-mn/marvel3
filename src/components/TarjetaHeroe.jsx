@@ -1,40 +1,43 @@
 import React from 'react';
+import { useFavoritos } from '../context/FavoritosContext';
+import {Link} from "react-router-dom";
+import corazon from "../assets/corazon.png";
 
-export const TarjetaHeroe = ({ characters}) => {
+/* export const TarjetaHeroe = ({personajes}) => {
+    const {anadirFavoritos} = useFavoritos();
 
   return (
     <>
         <div className="contenedor">
-            {characters && characters.map(character => {
+            {personajes && personajes.map(personaje => {
 
             return (
-                <article className="contenedor-tarjeta" key={character.id}>
+                <article className="contenedor-tarjeta" key={personaje.id}>
 
-                    <div className="character-img">
+                    <div className="personaje-img">
 
-                        {/* img */}
-                        {character.image && (
+                        img
+                        {personaje.image && (
                             <img 
-                            src={character.image.original_url || character.image.screen_url} 
+                            src={personaje.image.original_url || personaje.image.screen_url} 
                             className="img" 
-                            alt={character.name} 
+                            alt={personaje.name} 
                             />
                         )}
                     </div>
 
                         
-                    <div className="character-name">
-                    {/* nombre */}
-                    {character.real_name && (
-                        <small className="name"> ({character.real_name})</small>
+                    <div className="personaje-name">
+                    nombre
+                    {personaje.real_name && (
+                        <small className="name"> ({personaje.real_name})</small>
                     )}
                     </div>
 
-                    {/* descripcion */}
-                    {/* <div className="descripcion">
-                    <p>{character.deck || "Sin descripción"}</p>
-                    </div> */}
-
+                    // descripcion
+                    // <div className="descripcion">
+                    // <p>{personaje.deck || "Sin descripción"}</p>
+                    // </div>
                 </article>
             );
             })}
@@ -42,4 +45,22 @@ export const TarjetaHeroe = ({ characters}) => {
 
     </>
   )
-}
+} */
+ 
+
+export const TarjetaHeroe = ({character}) => {
+    const {anadirFavorito} = use();
+
+    return (
+        <div className='tarjeta-heroe'>
+            <img src={character.image?.small_url} />
+            <h3>{obtenerPersonajes.name}</h3>
+
+            <button>
+                <img src={corazon} alt="icono-corazon" className="favoritos" />
+            </button>
+
+            <Link to={`/detalle/${character.id}`}>Ver más?</Link>
+        </div>
+    )
+  }
