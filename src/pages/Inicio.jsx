@@ -1,23 +1,47 @@
 import { Link } from "react-router-dom";
 import React from 'react';
 import { TarjetaHeroe } from "../components/TarjetaHeroe";
-import {obtenerComics} from "../services/comicVineApi";
+import {obtenerPersonajes} from "../services/comicVineApi";
+
+import {useState} from "react";
+import { BarraBusqueda } from "../layout/BarraBusqueda";
+import { ListaHeroes } from "../components/ListaHeroes";
 
 
-export const Inicio = ({nextPage, more}) => {
+export const Inicio = () => {
+    const [personajes, setPersonajes] = useState([]);
 
-    console.log(obtenerComics);
+    const buscar = async (texto) => {
+        const data = await obtenerPersonajes(texto);
+        setPersonajes(data);
+    }
+
+
+    //
+    const [loading, setLoading] = useState(false);
+
+    const buscar2 = async(texto) => {
+        try {
+            setLoading(true);
+            const data = await obtenerPersonajes (texto);
+            setPersonajes(data);
+
+        } catch (error) {
+            console.error(error);
+
+        } finally {
+            setLoading(false);
+        }
+    };
+
 
     return (
         <>
-            <TarjetaHeroe />
+            <BarraBusqueda onBuscar={buscar}>
+                <ListaHeroes personajes={personajes} />
+            </BarraBusqueda>
 
-            {/* {more &&
-                <button className='boton' onClick={nextPage}>
-                    Ver más personajes
-                </button>
-            } */}
+            {loading && <p>Cargando...</p>}
         </>
-
-    );
-}
+    )
+};

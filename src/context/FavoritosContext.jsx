@@ -1,5 +1,6 @@
 import React from 'react';
 import {createContext, useContext, useState} from "react";
+import {useEffect} from "react";
 
 const FavoritosContext = createContext();
 
@@ -25,5 +26,3 @@ export const FavoritosProvider = ({children}) => {
 };
 
 export const useFavoritos = () => useContext(FavoritosContext);
-
-

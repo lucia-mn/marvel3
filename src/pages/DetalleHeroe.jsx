@@ -1,7 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
 export const DetalleHeroe = () => {
+
+  const {id} = useParams();
+
   return (
-    <div>DetalleHeroe</div>
+    <>
+      <h2>Detalle del heroe {id}</h2>
+    </>
   )
 }
