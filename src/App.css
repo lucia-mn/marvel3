@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
@@ -9,15 +10,3 @@ body {
   background-color: white;
 }
 
-/* main */
-main {
-  min-height: calc(100vh - 120px);
-}
-
-.contenedor {
-  padding: 2rem;
-}
-
-.error {
-  padding: 2rem;
-}

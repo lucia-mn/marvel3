@@ -4,7 +4,7 @@ import './index.css';
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {Router} from "./router/Router.jsx";
-import { FavoritosProvider } from './context/FavoritosContext.jsx';
+import { FavoritosProvider } from './context/FavoritosProvider.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <App />

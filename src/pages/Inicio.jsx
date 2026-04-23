@@ -4,10 +4,12 @@ import { ListaHeroes } from "../components/ListaHeroes";
 import { BarraBusqueda } from "../layout/BarraBusqueda";
 
 export const Inicio = () => {
+
     const [personajes, setPersonajes] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const cargarPersonajes = async () => {
+        
             try {
                 setLoading(true);
                 const data = await obtenerPersonajes();
