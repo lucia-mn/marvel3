@@ -1,47 +1,58 @@
-import { Link } from "react-router-dom";
-import React from 'react';
-import { TarjetaHeroe } from "../components/TarjetaHeroe";
-import {obtenerPersonajes} from "../services/comicVineApi";
-
-import {useState} from "react";
-import { BarraBusqueda } from "../layout/BarraBusqueda";
+import { useState, useEffect } from "react";
+import { obtenerPersonajes } from "../services/api";
 import { ListaHeroes } from "../components/ListaHeroes";
-
+import { BarraBusqueda } from "../layout/BarraBusqueda";
 
 export const Inicio = () => {
     const [personajes, setPersonajes] = useState([]);
-
-    const buscar = async (texto) => {
-        const data = await obtenerPersonajes(texto);
-        setPersonajes(data);
-    }
-
-
-    //
     const [loading, setLoading] = useState(false);
 
-    const buscar2 = async(texto) => {
-        try {
-            setLoading(true);
-            const data = await obtenerPersonajes (texto);
-            setPersonajes(data);
+    const cargarPersonajes = async () => {
+            try {
+                setLoading(true);
+                const data = await obtenerPersonajes();
+                setPersonajes(data);
 
-        } catch (error) {
-            console.error(error);
+            } catch (error) {
+                console.error("Error cargando personajes:", error);
+                setPersonajes([]);
 
-        } finally {
-            setLoading(false);
-        }
+            } finally {
+                setLoading(false);
+            }
     };
 
+    useEffect(() => {
+        cargarPersonajes();
+    }, []);
+
+
+    const buscar = async (texto) => {
+    try {
+        setLoading(true);
+
+        const res = await fetch(
+        `https://rickandmortyapi.com/api/character/?name=${texto}`
+        );
+
+        const data = await res.json();
+        setPersonajes(data.results || []);
+
+    } catch (error) {
+        console.error("Error buscando:", error);
+        setPersonajes([]);
+
+    } finally {
+        setLoading(false);
+    }
+};
 
     return (
-        <>
-            <BarraBusqueda onBuscar={buscar}>
-                <ListaHeroes personajes={personajes} />
-            </BarraBusqueda>
+    <>
+        <BarraBusqueda onBuscar={buscar} />
+        {loading && <p>Cargando...</p>}
 
-            {loading && <p>Cargando...</p>}
-        </>
-    )
+        <ListaHeroes characters={personajes} />
+    </>
+    );
 };

@@ -18,21 +18,22 @@ export const FavoritosProvider = ({ children }) => {
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
   }, [favoritos]);
 
-  const agregarFavorito = (personaje) => {
+  const anadirFavoritos = (personaje) => {
     if (!favoritos.find((p) => p.id === personaje.id)) {
       setFavoritos([...favoritos, personaje]);
     }
   };
 
-  const quitarFavorito = (id) => {
+  const quitarFavoritos = (id) => {
     setFavoritos(favoritos.filter((p) => p.id !== id));
   };
 
   return (
     <FavoritosContext.Provider
-      value={{ favoritos, agregarFavorito, quitarFavorito }}
-    >
+      value={{ favoritos, anadirFavoritos, quitarFavoritos }}>
+
       {children}
+      
     </FavoritosContext.Provider>
   );
 };
