@@ -1,7 +1,14 @@
-import { createRoot } from 'react-dom/client';
 import './index.css';
-import App from './App.jsx';
+// import App from './App.jsx';
 
-createRoot(document.getElementById('root')).render(
-  <App />
+import React from "react";
+import ReactDOM from "react-dom/client";
+import {Router} from "./router/Router.jsx";
+import { FavoritosProvider } from './context/FavoritosContext.jsx';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  // <App />
+  <FavoritosProvider>
+    <Router />
+  </FavoritosProvider>
 );

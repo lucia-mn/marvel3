@@ -1,45 +1,41 @@
 import React from 'react';
+import { useFavoritos } from '../context/FavoritosContext';
+import {Link} from "react-router-dom";
+import corazon from "../assets/corazon.png";
+import corazonBlanco from "../assets/corazonBlanco.png";
+ 
 
-export const TarjetaHeroe = ({ characters}) => {
+export const TarjetaHeroe = ({character}) => {
+    // const {anadirFavorito} = use();
 
-  return (
-    <>
-        <div className="contenedor">
-            {characters && characters.map(character => {
+    const {favoritos, agregarFavorito, quitarFavorito} = useFavoritos();
 
-            return (
-                <article className="contenedor-tarjeta" key={character.id}>
+    const esFavorito = favoritos.some((c) => c.id === character.id);
 
-                    <div className="character-img">
+    return (
+        <div className='tarjeta-heroe'>
 
-                        {/* img */}
-                        {character.image && (
-                            <img 
-                            src={character.image.original_url || character.image.screen_url} 
-                            className="img" 
-                            alt={character.name} 
-                            />
-                        )}
-                    </div>
+            <div className="tarjeta-heroe">
+                <img src={character.image} alt={character.name} />
 
-                        
-                    <div className="character-name">
-                    {/* nombre */}
-                    {character.real_name && (
-                        <small className="name"> ({character.real_name})</small>
-                    )}
-                    </div>
+                <h3>{character.name}</h3>
 
-                    {/* descripcion */}
-                    {/* <div className="descripcion">
-                    <p>{character.deck || "Sin descripción"}</p>
-                    </div> */}
+                <p>{character.species}</p>
+                <p>{character.status}</p>
+            </div>
 
-                </article>
-            );
-            })}
+            <button onClick={() =>
+                esFavorito ? quitarFavorito(character.id) : agregarFavorito(character)
+            }>
+
+                <img src={corazon} alt="icono-corazon" className="favoritos" />
+                {esFavorito ? <img src={corazon} alt="icono-corazon" className="favoritos" /> 
+                : 
+                <img src={corazonBlanco} alt="icono-corazon-blanco" className="favoritos" />}
+
+            </button>
+
+            <Link to={`/characters/${character.id}`}>Ver más?</Link>
         </div>
-
-    </>
-  )
+    )
 }

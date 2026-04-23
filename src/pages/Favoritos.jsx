@@ -1,7 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { useFavoritos } from '../context/FavoritosContext';
+import { ListaHeroes } from '../components/ListaHeroes';
 
 export const Favoritos = () => {
+  
+  const { favoritos } = useFavoritos();
+
   return (
-    <div>Favoritos</div>
-  )
-}
+    <>
+      <BarraBusqueda onBuscar={() => {}} />
+      <ListaHeroes characters={favoritos} />
+    </>
+    
+  );
+};

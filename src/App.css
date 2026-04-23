@@ -17,3 +17,7 @@ main {
 .contenedor {
   padding: 2rem;
 }
+
+.error {
+  padding: 2rem;
+}
