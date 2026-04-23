@@ -1,4 +1,5 @@
 import { TarjetaHeroe } from "./TarjetaHeroe";
+import "../styles/ListaHeroes.css";
 
 export const ListaHeroes = ({ characters }) => {
 

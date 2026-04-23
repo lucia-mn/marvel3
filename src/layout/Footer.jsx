@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     
     <footer className="footer">
-      <p>Marvel App - Proyecto React</p>
+      <p>Rick y Morty - Proyecto React</p>
     </footer>
   )
 }

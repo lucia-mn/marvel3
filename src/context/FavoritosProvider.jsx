@@ -29,6 +29,7 @@ export const FavoritosProvider = ({ children }) => {
   };
 
   return (
+    
     <FavoritosContext.Provider
       value={{ favoritos, anadirFavoritos, quitarFavoritos }}>
 

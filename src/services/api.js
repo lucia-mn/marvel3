@@ -1,6 +1,7 @@
 const BASE_URL = "https://rickandmortyapi.com/api";
 
 export const obtenerPersonajes = async () => {
+    
   try {
     const res = await fetch(`${BASE_URL}/character`);
     

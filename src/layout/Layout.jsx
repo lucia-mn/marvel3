@@ -10,7 +10,6 @@ export const Layout = () => {
 
     <>
       <Header />
-      {/* <BarraBusqueda /> */}
       <main>
         <Outlet />
       </main>

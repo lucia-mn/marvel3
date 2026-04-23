@@ -22,7 +22,6 @@ export const BarraBusqueda = ({onBuscar}) => {
           <input type='text' 
                   placeholder='buscar personajes...'
                   value={texto}
-                  // onChange={(e) => setTexto(e.target.value)}
                   onChange={cambioTexto}
           />
         </div>
