@@ -10,7 +10,7 @@ export const TarjetaHeroe = ({character}) => {
 
     const {favoritos, anadirFavoritos, quitarFavorito} = useFavoritos();
 
-    const esFavorito = favoritos.some((c) => c.id === character.id);
+    const esFavorito = favoritos.some((c) => String(c.id) === String(character.id));
 
     return (
 
@@ -25,8 +25,8 @@ export const TarjetaHeroe = ({character}) => {
                 {/* <p>{character.species}</p>
                 <p>{character.status}</p> */}
 
-                <button onClick={() =>
-                    esFavorito ? quitarFavorito(id) : anadirFavoritos(character) }>
+                <button type='button' onClick={() =>
+                    esFavorito ? quitarFavorito(character.id) : anadirFavoritos(character) }>
 
                     <img src={esFavorito ? corazon : corazonBlanco} 
                         alt="favorito" 
