@@ -20,7 +20,7 @@ export const BarraBusqueda = ({onBuscar}) => {
           <img src={lupa} alt='lupa' className='icono-lupa' />
 
           <input type='text' 
-                  placeholder='buscar personajes...'
+                  placeholder='BUSCAR PERSONAJES...'
                   value={texto}
                   onChange={cambioTexto}
           />
