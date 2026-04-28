@@ -10,18 +10,18 @@ export const Inicio = () => {
 
     const cargarPersonajes = async () => {
         
-            try {
-                setLoading(true);
-                const data = await obtenerPersonajes();
-                setPersonajes(data);
+        try {
+            setLoading(true);
+            const data = await obtenerPersonajes();
+            setPersonajes(data);
 
-            } catch (error) {
-                console.error("Error cargando personajes:", error);
-                setPersonajes([]);
+        } catch (error) {
+            console.error("Error cargando personajes:", error);
+            setPersonajes([]);
 
-            } finally {
-                setLoading(false);
-            }
+        } finally {
+            setLoading(false);
+        }
     };
 
     useEffect(() => {

@@ -5,14 +5,16 @@ import {useEffect} from "react";
 const FavoritosContext = createContext();
 
 export const FavoritosProvider = ({ children }) => {
-  const [favoritos, setFavoritos] = useState([]);
+  const [favoritos, setFavoritos] = useState(() => {
+    const data = localStorage.getItem("favoritos");
 
+    return data ? JSON.parse(data) : [];
+  });
 
-  useEffect(() => {
-    const guardados = JSON.parse(localStorage.getItem("favoritos")) || [];
-    setFavoritos(guardados);
-  }, []);
-
+  // useEffect(() => {
+  //   const guardados = JSON.parse(localStorage.getItem("favoritos")) || [];
+  //   setFavoritos(guardados);
+  // }, []);
 
   useEffect(() => {
     localStorage.setItem("favoritos", JSON.stringify(favoritos));

@@ -9,7 +9,6 @@ import "../styles/TarjetaHeroe.css";
 export const TarjetaHeroe = ({character}) => {
 
     const {favoritos, anadirFavoritos, quitarFavoritos} = useFavoritos();
-
     const esFavorito = favoritos.some((c) => String(c.id) === String(character.id));
 
     return (

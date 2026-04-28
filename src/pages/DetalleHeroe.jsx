@@ -23,7 +23,7 @@ export const DetalleHeroe = () => {
 
       } catch (error) {
         console.error(error);
-        
+
       } finally {
         setLoading(false);
       }
@@ -76,7 +76,7 @@ export const DetalleHeroe = () => {
 
       {/* episodios */}
       <div className="episodios">
-        <h3>Episodios</h3>
+        <h3>episodios</h3>
 
         <div className="slider">
           {episodios.map((ep) => (
