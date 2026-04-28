@@ -8,7 +8,7 @@ import "../styles/TarjetaHeroe.css";
 
 export const TarjetaHeroe = ({character}) => {
 
-    const {favoritos, anadirFavoritos, quitarFavorito} = useFavoritos();
+    const {favoritos, anadirFavoritos, quitarFavoritos} = useFavoritos();
 
     const esFavorito = favoritos.some((c) => String(c.id) === String(character.id));
 
@@ -26,7 +26,7 @@ export const TarjetaHeroe = ({character}) => {
                 <p>{character.status}</p> */}
 
                 <button type='button' onClick={() =>
-                    esFavorito ? quitarFavorito(character.id) : anadirFavoritos(character) }>
+                    esFavorito ? quitarFavoritos(character.id) : anadirFavoritos(character) }>
 
                     <img src={esFavorito ? corazon : corazonBlanco} 
                         alt="favorito" 

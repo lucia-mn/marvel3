@@ -20,8 +20,10 @@ export const DetalleHeroe = () => {
 
         const data = await res.json();
         setPersonaje(data);
+
       } catch (error) {
         console.error(error);
+        
       } finally {
         setLoading(false);
       }

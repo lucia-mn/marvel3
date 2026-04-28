@@ -1,5 +1,4 @@
 .tarjeta-heroe {
-  
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -20,7 +19,7 @@
 }
 
 .linea {
-  height: 10px;
+  height: 5px;
   background: #B2DF28;
   margin:0;
 }
@@ -33,8 +32,8 @@
   padding: 10px;
 }
 
-.header button {
-  background: none;
+.nombre button {
+  background: black;
   border: none;
 }
 
@@ -50,10 +49,9 @@
   padding: 12px;
   text-decoration: none;
   clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 90% 120%, 0% 100%);
-  transition: background 0.2s;
 }
 
 .detalles:hover {
-  background: #222;
+  background: #B2DF28;
+  transition: background-color 0.5s ease, transform 0.5s ease;
 }
-
