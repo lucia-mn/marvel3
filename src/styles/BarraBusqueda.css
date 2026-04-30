@@ -1,5 +1,5 @@
 .buscador {
-  padding: 1rem;
+  padding: 0 1rem 2rem 1rem;
   background-color: #fff;
   width: 100%;
 }
@@ -44,4 +44,19 @@
   font-size: 0.8rem;
   opacity: 0.6;
   text-transform: uppercase;
+}
+
+
+
+/* movil */
+@media (max-width: 600px) {
+
+  .grupo  {
+    padding: 8px;
+  }
+
+  .barra-busqueda {
+    font-size: 0.9rem;
+  }
+
 }

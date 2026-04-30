@@ -6,7 +6,7 @@
 
 .imagen-personaje {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -54,4 +54,20 @@
 .detalles:hover {
   background: #B2DF28;
   transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+
+
+
+/* movil */
+@media (max-width: 600px) {
+
+  .imagen-personaje  {
+    height: 180px;
+  }
+
+  .nombre {
+    padding: 8px;
+  }
+
 }

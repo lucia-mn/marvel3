@@ -1,6 +1,17 @@
 .fav {
   margin: 0 2%;
   color: #B2DF28;
-  margin-top: 4%;
+  margin-top: 3%;
   text-transform: uppercase;
+}
+
+
+
+/* movil */
+@media (max-width: 600px) {
+
+  .fav  {
+    font-size: 1rem;
+  }
+
 }
