@@ -51,7 +51,7 @@ export const Inicio = () => {
 
     return (
     <>
-        <BarraBusqueda onBuscar={buscar} />
+        <BarraBusqueda onBuscar={buscar} total={personajes.length} />
         {loading && <p>Cargando...</p>}
 
         <ListaHeroes characters={personajes} />
