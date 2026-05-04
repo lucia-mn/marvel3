@@ -3,7 +3,7 @@ import "../styles/BarraBusqueda.css";
 import { useState } from "react";
 import lupa from "../assets/lupa.png";
 
-export const BarraBusqueda = ({onBuscar}) => {
+export const BarraBusqueda = ({onBuscar, total}) => {
 
   const [texto, setTexto] = useState("");
 
@@ -27,7 +27,7 @@ export const BarraBusqueda = ({onBuscar}) => {
         </div>
 
         <div className='resultados'>
-          resultados
+          {total} resultados
         </div>
 
       </div>

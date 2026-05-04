@@ -2,6 +2,11 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.tarjeta-heroe:hover {
+  transform: scale(1.03);
 }
 
 .imagen-personaje {
