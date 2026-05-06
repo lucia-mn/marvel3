@@ -2,6 +2,7 @@ import React from 'react';
 import "../styles/Header.css";
 import logo2 from "../assets/logo2.png";
 import corazon from "../assets/corazon.png";
+import corazonVerde from "../assets/corazon-verde.png";
 import {Link} from "react-router-dom";
 import { useFavoritos } from '../context/FavoritosProvider';
 
@@ -18,7 +19,7 @@ export const Header = () => {
     </Link>
 
     <Link to="/favoritos" className='icono-fav'>
-      <img src={corazon} alt="icono-corazon" className="favoritos" />
+      <img src={corazonVerde} alt="icono-corazon" className="favoritos" />
       <span className="contador">{favoritos.length}</span>
     </Link>
   </header>
