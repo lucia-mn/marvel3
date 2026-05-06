@@ -36,6 +36,7 @@
 
 .episodios h3{
   margin-bottom: 1rem;
+  margin-left: 1%;
 }
 
 .slider {
@@ -112,6 +113,11 @@
 
   .card-ep h4 {
     font-size: 0.75rem;
+  }
+
+  .episodios h3 {
+    margin-left: 2%;
+    margin-top: 10%;
   }
 
 }

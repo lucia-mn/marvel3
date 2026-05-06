@@ -18,6 +18,25 @@
     cursor: pointer;
 }
 
+.icono-fav {
+  /* position: relative; */
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.contador {
+  /* position: absolute; */
+  color: #00B5CC;
+  font-size: 1rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-weight: 500;
+  float: left;
+}
+
 
 
 /* tablet */
