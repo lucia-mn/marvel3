@@ -32,7 +32,7 @@ export const Favoritos = () => {
     <>
       <h3 className='fav'>favoritos</h3>
 
-      <BarraBusqueda onBuscar={buscar} />
+      <BarraBusqueda onBuscar={buscar} total={personajes.length} />
       <ListaHeroes characters={personajes} />
     </>
 
