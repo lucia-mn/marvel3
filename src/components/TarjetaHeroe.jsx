@@ -14,26 +14,31 @@ export const TarjetaHeroe = ({character}) => {
     return (
 
         <div className='tarjeta-heroe'>
+            <Link to={`/characters/${character.id}`} className='detalles'>
 
-            <img src={character.image} alt={character.name} className='imagen-personaje' />
-            <div className='linea'></div>
+                <img src={character.image} alt={character.name} className='imagen-personaje' />
+                <div className='linea'></div>
 
-            <div className='nombre'>
-                <h3>{character.name}</h3>
+                <div className='verde'>
+                    <div className='nombre'>
+                        <h3>{character.name}</h3>
 
-                {/* <p>{character.species}</p>
-                <p>{character.status}</p> */}
+                        {/* <p>{character.species}</p>
+                        <p>{character.status}</p> */}
 
-                <button type='button' onClick={() =>
-                    esFavorito ? quitarFavoritos(character.id) : anadirFavoritos(character) }>
+                        <button type='button' onClick={(e) => {
+                            e.stopPropagation();
+                            e.preventDefault();
 
-                    <img src={esFavorito ? corazon : corazonBlanco} 
-                        alt="favorito" 
-                        className="favoritos" />
-                </button>
-            </div>
+                            esFavorito ? quitarFavoritos(character.id) : anadirFavoritos(character) 
+                        }}>
+                            
+                            <img src={esFavorito ? corazon : corazonBlanco} alt="favorito" className="favoritos" />
+                        </button>
+                    </div>
+                </div> 
 
-            <Link to={`/characters/${character.id}`} className='detalles'></Link>
+            </Link>
         </div>
     );
 }
