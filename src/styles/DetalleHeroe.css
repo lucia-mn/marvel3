@@ -69,6 +69,7 @@
 
   .detalle-card {
     gap: 15px;
+    padding: 10px;
   }
 
   .detalle-img {
