@@ -17,7 +17,6 @@
 
 .tarjeta-heroe h3 {
   padding: 10px;
-  background: black;
   color: white;
   font-weight: bold;
   margin: 0px;
@@ -29,38 +28,57 @@
   margin:0;
 }
 
+/* nombre-personaje */
 .nombre {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: black;
-  padding: 10px;
+  background-color: black;
+  padding: 12px;
+}
+
+.nombre:hover {
+  background: #B2DF28;
 }
 
 .nombre button {
-  background: black;
+  background: none;
   border: none;
 }
 
+/* icono-corazon-fav */
 .favoritos {
   width: 20px;
   cursor: pointer;
   background: none;
 }
 
+/* .favoritos:hover {
+  width: 20px;
+  cursor: pointer;
+  background: none;
+  background-image: url('../assets/corazon-fondo-blanco.png');
+} */
+
 .detalles {
   text-align: center;
-  background: black;
+  /* background: black; */
   padding: 12px;
   text-decoration: none;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 40%, 90% 120%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 84%, 62% 135%, 0% 100%);
 }
 
-.detalles:hover {
+/* bg-tarjeta */
+.verde {
+  height: 70px;
+  background: black;
+  margin:0;
+}
+
+.verde:hover {
   background: #B2DF28;
-  transition: background-color 0.5s ease, transform 0.5s ease;
+  margin:0;
 }
-
 
 
 
@@ -73,6 +91,10 @@
 
   .nombre {
     padding: 8px;
+  }
+
+  .detalles {
+    clip-path: none;
   }
 
 }
