@@ -2,6 +2,7 @@ import React from 'react';
 import { useFavoritos } from '../context/FavoritosProvider';
 import {Link} from "react-router-dom";
 import corazon from "../assets/corazon.png";
+import corazonVerde from "../assets/corazon-verde.png";
 import corazonBlanco from "../assets/corazonBlanco.png";
 import "../styles/TarjetaHeroe.css";
  
@@ -33,7 +34,7 @@ export const TarjetaHeroe = ({character}) => {
                             esFavorito ? quitarFavoritos(character.id) : anadirFavoritos(character) 
                         }}>
                             
-                            <img src={esFavorito ? corazon : corazonBlanco} alt="favorito" className="favoritos" />
+                            <img src={esFavorito ? corazonVerde : corazonBlanco} alt="favorito" className="favoritos" />
                         </button>
                     </div>
                 </div> 
